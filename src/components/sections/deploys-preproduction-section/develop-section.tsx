@@ -5,7 +5,7 @@ import React from "react";
 
 const DevelopSection = () => {
   return (
-    <div className=" text-[32px] border border-[var(--border)] h-[270px] px-6 flex flex-col items-center justify-center  text-center  font-semibold leading-[125%] tracking-[-1.28px]">
+    <div className=" text-[32px] border border-t-0 border-x-0 border-[var(--border)] h-[270px] px-6 flex flex-col items-center justify-center  text-center  font-semibold leading-[125%] tracking-[-1.28px]">
       <span className="flex items-center gap-4">
         <p>Develop with your favorite tools</p>
         <GreaterThanUnderscoreSvg />

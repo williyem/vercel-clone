@@ -8,7 +8,7 @@ const DeployLeft = () => {
         <Terminal size={18} />
         <span>Git-connected Deploys</span>
       </div>
-      <div className="text-[#ededed] text-2xl mb-8 " data-size="large">
+      <div className="text-[#ededed] text-2xl mb- " data-size="large">
         <strong>From localhost to https, in seconds. </strong>
         <p className="text-[#a1a1a1] tracking-[-0.96px] leading-[32px]  font-medium">
           Deploy from Git or your CLI.

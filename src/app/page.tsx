@@ -1,22 +1,52 @@
 "use client";
 
 import HeroSection from "@/components/sections/hero-section";
-import DevelopSection from "@/components/sections/develop-section";
-import DeploysPreproductionSection from "@/components/sections/deploys-preproduction-section";
+import DevelopSection from "@/components/sections/deploys-preproduction-section/develop-section";
+import DeploysPreproductionSection from "@/components/sections/deploys-preproduction-section/deploys-preproduction-section";
+import RollBacksConformance from "@/components/sections/rollbacks-conformance/rollbacks-conformance-section";
+import { twJoin } from "tailwind-merge";
+import { FC } from "react";
 
 export default function Home() {
   return (
-    <main className=" mx-auto   ">
+    <main
+      className=" mx-auto   "
+      style={{ width: "calc(var(--cellsize) * 13)" }}
+    >
       <HeroSection />
       <div
-        className="text-white    mx-auto text-lg "
+        className="text-white    relative   mx-auto text-lg "
         style={{ width: "calc(var(--cellsize) * 12)" }}
       >
-        <div className="space-y-3">
+        <BottomFloatingCross />
+        <div className="space-y-3 border border-[var(--border)] border-t-0">
           <DevelopSection />
           <DeploysPreproductionSection />
+          <RollBacksConformance />
         </div>
       </div>
     </main>
   );
 }
+
+const BottomFloatingCross: FC = () => {
+  const boxClass =
+    "absolute z-10  aspect-square size-2 md:size-3 border-[#7A7A7A]";
+
+  return (
+    <div className="absolute right-0 flex items-center justify-center">
+      {/* Inner Cross Box */}
+      <div
+        aria-hidden={true}
+        className={twJoin(boxClass, "-left-px -top-px border-l border-t")}
+      />
+      <div
+        aria-hidden={true}
+        className={twJoin(
+          boxClass,
+          "-left-2 -top-2 border-b border-r md:-left-3 md:-top-3"
+        )}
+      />
+    </div>
+  );
+};

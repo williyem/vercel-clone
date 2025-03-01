@@ -17,12 +17,10 @@ const geistMono = localFont({
 
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/lib/providers/theme-provider";
-// import NavBar from "@/components/navbar/navbar";
-import { NavigationMenuWithNub } from "@/components/navbar/navigation-menu";
 import { NavBar } from "@/components/navbar";
 
 export const metadata: Metadata = {
-  title: "Vercel Clone",
+  title: "Vercel: Build and deploy the best web experience",
   description:
     "A clone of the Vercel website built with Next.js, TypeScript, Tailwind CSS, shadcn/ui and Framer Motion",
 };

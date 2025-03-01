@@ -8,11 +8,11 @@ import VercelCanvas from "../vercel-canvas";
 
 export default function HeroSection() {
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden bg-[#000] pt-28 text-[rgb(237,237,237)]">
+    <main className="relative min-h-[79vh] w-full overflow-x-hidden bg-[#000] pt-28 text-[rgb(237,237,237)]">
       <header className="flex w-full items-center  justify-center px-4">
         <div className="relative grid  grid-cols-[repeat(8,var(--cellsize))] grid-rows-[1fr_repeat(4,var(--cellsize))] place-items-center border border-[var(--border)] md:grid-cols-[repeat(12,var(--cellsize))] md:grid-rows-[repeat(8,var(--cellsize))]">
           <FloatingCross />
-          <BottomFloatingCross />
+          {/* <BottomFloatingCross /> */}
 
           {/* Background */}
           <div
@@ -136,8 +136,7 @@ const Button: FC<ButtonProps> = ({ children, variant, className }) => {
 };
 
 const FloatingCross: FC = () => {
-  const boxClass =
-    "absolute z-10 aspect-square size-2 md:size-3 border-[#7A7A7A]";
+  const boxClass = "absolute  aspect-square size-2 md:size-3 border-[#7A7A7A]";
   return (
     <>
       <div
@@ -152,27 +151,6 @@ const FloatingCross: FC = () => {
         )}
       />
     </>
-  );
-};
-const BottomFloatingCross: FC = () => {
-  const boxClass =
-    "absolute z-10 aspect-square size-2 md:size-3 border-[#7A7A7A]";
-
-  return (
-    <div className="absolute bottom-0 right-0 flex items-center justify-center">
-      {/* Inner Cross Box */}
-      <div
-        aria-hidden={true}
-        className={twJoin(boxClass, "-left-px -top-px border-l border-t")}
-      />
-      <div
-        aria-hidden={true}
-        className={twJoin(
-          boxClass,
-          "-left-2 -top-2 border-b border-r md:-left-3 md:-top-3"
-        )}
-      />
-    </div>
   );
 };
 
