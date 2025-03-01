@@ -31,7 +31,7 @@
     --radius: 0.5rem;
   }
   .dark {
-    --background: 240 10% 3.9%;
+    --background: #000;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -65,4 +65,94 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+main {
+  --geist-background: #000;
+  --geist-foreground: #fff;
+  --yellow: rgba(255, 206, 32, 0.8);
+  --red: rgba(197, 0, 0, 0.8);
+  --blue: rgba(0, 89, 171, 0.8);
+  --cyan: rgba(15, 255, 169, 0.8);
+  --border: rgba(255, 255, 255, 0.1);
+  --cellsize: calc(calc(100vw - 32px) / 8);
+  --ds-shadow-small: 0px 1px 2px rgba(0, 0, 0, 0.16);
+  --ds-gray-alpha-400: hsla(0, 0%, 100%, 0.14);
+  --ds-background-100-value: 0, 0%, 4%;
+  --ds-background-100: hsla(var(--ds-background-100-value), 1);
+  --ds-background-200: hsla(var(--ds-background-200-value), 1);
+  --ds-background-200-value: 0, 0%, 0%;
+  --ds-gray-100-value: #a1a1a1;
+  --ds-gray-500-value: 0, 0%, 27%;
+  --ds-gray-500: hsla(var(--ds-gray-500-value), 1);
+  --ds-gray-900: #a1a1a1
+  --ds-gray-1000-value: 0, 0%, 93%;
+  /* --ds-background-100: #0a0a0a; */
+}
+
+@media (min-width: 768px) {
+  main {
+    --cellsize: calc(min(1080px, 100vw - 32px) / 12);
+  }
+}
+
+.gradient {
+  background: conic-gradient(
+    from 180deg at 50% 62%,
+    transparent 0deg,
+    var(--blue) 72deg,
+    var(--cyan) 144deg,
+    var(--yellow) 216deg,
+    var(--red) 288deg,
+    transparent 1turn
+  );
+}
+
+@media (min-width: 768px) {
+  .gradient {
+    background: conic-gradient(
+      from 180deg at 50% 70%,
+      transparent 0deg,
+      var(--blue) 72deg,
+      var(--cyan) 144deg,
+      var(--yellow) 216deg,
+      var(--red) 288deg,
+      transparent 1turn
+    );
+  }
+}
+
+/* In your global CSS file (e.g., styles.css or app.css) */
+.vercel-text-gradient {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    var(--ds-gray-500) 75.47%,
+    transparent 100%
+  );
+  -webkit-mask-composite: destination-in;
+}
+
+.deploy-visual_grid__roLF7 {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    var(--ds-gray-500) 30%,
+    transparent 100%
+  );
+  -webkit-mask-composite: destination-in;
+}
+
+svg {
+  shape-rendering: crispEdges;
+}
+
+.outlined-text_text__WDMgT {
+  --border: var(--ds-gray-500);
+
+  color: var(--ds-background-100);
+  text-shadow: -1px -1px 0 var(--border), 0 -1px 0 var(--border),
+    1px -1px 0 var(--border), 1px 0 0 var(--border), 1px 1px 0 var(--border),
+    0 1px 0 var(--border), -1px 1px 0 var(--border), -1px 0 0 var(--border);
 }
