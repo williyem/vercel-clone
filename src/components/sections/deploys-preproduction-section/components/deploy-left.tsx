@@ -78,28 +78,7 @@ const DeployLeft = () => {
               <p className="text-xs dark:text-[#a1a1a1]"> vercel.com</p>
             </div>
           </div>
-          {/* <svg
-        width="100%"
-        height="64"
-        viewBox="0 0 600 64"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <text
-          x="50%"
-          y="50%"
-          dominantBaseline="middle"
-          textAnchor="middle"
-          fontSize="48"
-          fontWeight="bold"
-          stroke="#333"
-          strokeWidth="2"
-          fill="transparent"
-          style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
-        >
-          What will you ship?
-        </text>
-      </svg> */}
+
           <span className="outlined-text_text__WDMgT  leading-[0.83] font-semibold tracking-[-0.075em] w-full z-10 absolute top-[26%] left-[-2px] text-center text-4xl">
             What will you ship?
           </span>
