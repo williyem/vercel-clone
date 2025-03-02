@@ -1,8 +1,14 @@
+import RightFloatingCross from "@/components/bottom-floating-cross";
+import FloatingCross from "@/components/floating-cross";
 import React from "react";
 
 const ReadyDeploySection = () => {
   return (
-    <div className="mt-2 border-t border-b border-[var(--border)] py-10 px-6 md:px-12">
+    <div className=" relative mt-4 border-t border-b border-[var(--border)] py-10 px-6 md:px-12">
+      <FloatingCross />
+      <div className="absolute bottom-0 right-0">
+        <RightFloatingCross />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
         {/* Left - Main Text */}
         <div className="col-span-2 text-white space-y-4">

@@ -8,13 +8,9 @@ import VercelCanvas from "../vercel-canvas";
 
 export default function HeroSection() {
   return (
-    <main className="relative min-h-[70vh] w-full overflow-x-hidden bg-[#000] pt-28 text-[rgb(237,237,237)]">
-      <header className="flex w-full items-center  justify-center px-4">
-        <div className="relative grid  grid-cols-[repeat(8,var(--cellsize))] grid-rows-[1fr_repeat(4,var(--cellsize))] place-items-center border border-[var(--border)] md:grid-cols-[repeat(12,var(--cellsize))] md:grid-rows-[repeat(8,var(--cellsize))]">
-          <FloatingCross />
-          {/* <BottomFloatingCross /> */}
-
-          {/* Background */}
+    <main className="relative  w-full overflow-x-hidden bg-[#000]  text-[rgb(237,237,237)]">
+      <header className="flex w-full items-center  justify-center">
+        <div className="  w-full relative grid  grid-cols-[repeat(8,var(--cellsize))] grid-rows-[1fr_repeat(4,var(--cellsize))] place-items-center border border-[var(--border)] md:grid-cols-[repeat(12,var(--cellsize))] md:grid-rows-[repeat(8,var(--cellsize))]">
           <div
             aria-hidden={true}
             className="absolute bottom-0 size-full overflow-hidden pt-[calc(var(--cellsize)*2)] md:pt-[var(--cellsize)]"
@@ -137,25 +133,6 @@ const Button: FC<ButtonProps> = ({ children, variant, className }) => {
     >
       {children}
     </button>
-  );
-};
-
-const FloatingCross: FC = () => {
-  const boxClass = "absolute  aspect-square size-2 md:size-3 border-[#7A7A7A]";
-  return (
-    <>
-      <div
-        aria-hidden={true}
-        className={twJoin(boxClass, "-left-px -top-px border-l border-t")}
-      />
-      <div
-        aria-hidden={true}
-        className={twJoin(
-          boxClass,
-          "-left-2 -top-2 border-b border-r md:-left-3 md:-top-3"
-        )}
-      />
-    </>
   );
 };
 

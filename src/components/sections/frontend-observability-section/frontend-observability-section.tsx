@@ -1,9 +1,11 @@
+import RightFloatingCross from "@/components/bottom-floating-cross";
 import { LineChart } from "lucide-react";
 import React from "react";
 
 const FrontendObservabilitySection = () => {
   return (
-    <section className=" border-[var(--border)] bg-[var(--ds-background-100)] h-[440px] mt-0 border-y text-white py-12 px-6 md:px-12">
+    <section className="relative border-[var(--border)] bg-[var(--ds-background-100)] h-[440px] mt-0 border-y text-white py-12 px-6 md:px-12">
+      <RightFloatingCross />
       <div
         className=" h-full "
         style={{

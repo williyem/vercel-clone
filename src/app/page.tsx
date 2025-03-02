@@ -4,61 +4,32 @@ import HeroSection from "@/components/sections/hero-section";
 import DevelopSection from "@/components/sections/deploys-preproduction-section/develop-section";
 import DeploysPreproductionSection from "@/components/sections/deploys-preproduction-section/deploys-preproduction-section";
 import RollBacksConformance from "@/components/sections/rollbacks-conformance/rollbacks-conformance-section";
-import { twJoin } from "tailwind-merge";
-import { FC } from "react";
+
 import ScaleContentSection from "@/components/sections/scale-content-section/scale-content-section";
 import ReadyDeploySection from "@/components/sections/ready-deploy-section/ready-deploy-section";
 import FrontendObservabilitySection from "@/components/sections/frontend-observability-section/frontend-observability-section";
+import RightFloatingCross from "@/components/bottom-floating-cross";
+import FloatingCross from "@/components/floating-cross";
 
 export default function Home() {
   return (
-    <main
-      className=" mx-auto   max-w-[100%] "
-      style={{ width: "calc(var(--cellsize) * 13)" }}
-    >
+    <main className=" relative mx-auto w-full border-[var(--border)] border-t-0 mt-28 max-[768px]:max-w-[calc(var(--cellsize)*8)] max-w-[calc(var(--cellsize)*12)] border">
+      <FloatingCross />
       <HeroSection />
-      <div
-        className="text-white    relative max-w-[100%]   mx-auto text-lg "
-        style={{
-          width: "calc(var(--cellsize) * 12)",
-          // maxWidth: "calc(var(--cellsize) * 8)%",
-        }}
-      >
-        <BottomFloatingCross />
-        <div className=" border w-full border-[var(--border)] border-t-0">
-          <div className="space-y-3">
-            <DevelopSection />
-            <DeploysPreproductionSection />
-          </div>
-          <FrontendObservabilitySection />
+      <div className="relative ">
+        <RightFloatingCross />
+        <DevelopSection />
 
+        <DeploysPreproductionSection />
+        <FrontendObservabilitySection />
+        <div className="relative">
+          <FloatingCross />
           <RollBacksConformance />
-          <ScaleContentSection />
-          <ReadyDeploySection />
         </div>
+        <ScaleContentSection />
+
+        <ReadyDeploySection />
       </div>
     </main>
   );
 }
-
-const BottomFloatingCross: FC = () => {
-  const boxClass =
-    "absolute z-10  aspect-square size-2 md:size-3 border-[#7A7A7A]";
-
-  return (
-    <div className="absolute right-0 flex items-center justify-center">
-      {/* Inner Cross Box */}
-      <div
-        aria-hidden={true}
-        className={twJoin(boxClass, "-left-px -top-px border-l border-t")}
-      />
-      <div
-        aria-hidden={true}
-        className={twJoin(
-          boxClass,
-          "-left-2 -top-2 border-b border-r md:-left-3 md:-top-3"
-        )}
-      />
-    </div>
-  );
-};
