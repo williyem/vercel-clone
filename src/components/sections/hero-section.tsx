@@ -94,14 +94,19 @@ export default function HeroSection() {
                 <Image
                   src={buttonTriangle}
                   alt=""
-                  className="-ml-2"
+                  className="-ml-2 hover:bg-gray-200"
                   width={16}
                   height={16}
                 />
                 <span className="md:hidden">Deploy</span>
-                <span className="hidden md:block">Start Deploying</span>
+                <span className="hidden md:block ">Start Deploying</span>
               </Button>
-              <Button variant="dark">Get a Demo</Button>
+              <button
+                className="outline-btn border-[0.5px] border-[var(--ds-gray-200)]  hover:border-[var(--themed-border)]   hover:bg-[var(--ds-gray-200)]   relative flex cursor-pointer  items-center justify-center gap-x-2.5 rounded-full px-4 py-2 text-sm font-semibold md:w-48 md:py-3 md:text-base
+"
+              >
+                Get a Demo
+              </button>
             </div>
           </div>
         </div>
@@ -125,7 +130,7 @@ const Button: FC<ButtonProps> = ({ children, variant, className }) => {
   return (
     <button
       className={twMerge(
-        "relative flex cursor-pointer items-center justify-center gap-x-2.5 rounded-full px-4 py-2 text-sm font-semibold md:w-48 md:py-3 md:text-base",
+        "relative flex cursor-pointer hover:bg-gray-100 items-center justify-center gap-x-2.5 rounded-full px-4 py-2 text-sm font-semibold md:w-48 md:py-3 md:text-base",
         VARIANT_CLASSES[variant],
         className
       )}
@@ -158,7 +163,6 @@ const BackgoundLines: FC = () => {
   return (
     <svg
       aria-hidden="true"
-      // TODO: Improve positioning for mobile
       className="absolute size-full scale-[1.8] md:scale-100"
       fill="none"
       viewBox="0 0 1200 700"

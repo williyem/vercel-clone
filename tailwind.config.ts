@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "ds-background-200": "hsla(0, 0%, 0%, 1)", // or pull from your system
+        "ds-background-200": "hsla(0, 0%, 0%, 1)",
 
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

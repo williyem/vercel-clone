@@ -1,5 +1,3 @@
-import LockIconSvg from "@/app/assets/icons/lock-icon-svg";
-import { Lock, Terminal } from "lucide-react";
 import React from "react";
 import RollBacksConformanceLeft from "./components/Rollbacks-conformance-left";
 import RollBacksConformanceRight from "./components/Rollbacks-conformance-right";

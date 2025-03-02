@@ -6,6 +6,9 @@ import DeploysPreproductionSection from "@/components/sections/deploys-preproduc
 import RollBacksConformance from "@/components/sections/rollbacks-conformance/rollbacks-conformance-section";
 import { twJoin } from "tailwind-merge";
 import { FC } from "react";
+import ScaleContentSection from "@/components/sections/scale-content-section/scale-content-section";
+import ReadyDeploySection from "@/components/sections/ready-deploy-section/ready-deploy-section";
+import FrontendObservabilitySection from "@/components/sections/frontend-observability-section/frontend-observability-section";
 
 export default function Home() {
   return (
@@ -22,7 +25,10 @@ export default function Home() {
         <div className="space-y-3 border border-[var(--border)] border-t-0">
           <DevelopSection />
           <DeploysPreproductionSection />
+          {/* <FrontendObservabilitySection /> */}
           <RollBacksConformance />
+          <ScaleContentSection />
+          <ReadyDeploySection />
         </div>
       </div>
     </main>
