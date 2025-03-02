@@ -1,101 +1,131 @@
+import VercelFooterSvg from "@/app/assets/icons/vercel-footer-svg";
 import Link from "next/link";
 
 const footerLinks = [
   {
-    title: "Product",
+    title: "Products",
     links: [
-      { label: "Features", href: "/features" },
-      { label: "Integrations", href: "/integrations" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Changelog", href: "/changelog" },
-      { label: "Documentation", href: "/docs" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About Us", href: "/about" },
-      { label: "Blog", href: "/blog" },
-      { label: "Careers", href: "/careers" },
-      { label: "Contact Us", href: "/contact" },
-      { label: "Partners", href: "/partners" },
+      "AI",
+      "Enterprise",
+      "Fluid Compute",
+      "Next.js",
+      "Observability",
+      "Previews",
+      "Rendering",
+      "Security",
+      "Turbo",
+      { label: "v0 ↗", href: "https://v0.dev" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Guides", href: "/guides" },
-      { label: "Templates", href: "/templates" },
-      { label: "Examples", href: "/examples" },
-      { label: "Support", href: "/support" },
-      { label: "API", href: "/api" },
+      "Community ↗",
+      "Docs",
+      "Guides",
+      "Help",
+      "Integrations",
+      "Pricing",
+      "Resources",
+      "Solution Partners",
+      "Templates",
     ],
   },
   {
-    title: "Legal",
+    title: "Company",
     links: [
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
-      { label: "Cookie Policy", href: "/cookies" },
-      { label: "DPA", href: "/dpa" },
-      { label: "Subprocessors", href: "/subprocessors" },
+      "About",
+      "Blog",
+      "Careers",
+      "Changelog",
+      "Contact Us",
+      "Customers",
+      "Partners",
+      "Privacy Policy",
+      { label: "Legal ▾", isDropdown: true },
+    ],
+  },
+  {
+    title: "Social",
+    icons: [
+      {
+        // icon: GitHub
+        label: "GitHub",
+        href: "#",
+      },
+      {
+        // icon: GitHub
+        label: "LinkedIn",
+        href: "#",
+      },
+      {
+        // icon: GitHub
+        label: "Twitter",
+        href: "#",
+      },
+      {
+        // icon: GitHub
+        label: "YouTube",
+        href: "#",
+      },
     ],
   },
 ];
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="border-t bg-background">
-      <div className="container px-4 md:px-6 py-8 md:py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {footerLinks.map((group) => (
-            <div key={group.title} className="space-y-3">
-              <h3 className="text-sm font-medium">{group.title}</h3>
-              <ul className="space-y-2">
-                {group.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
+    <footer className="w-full  bg-black text-white px-6 py-10">
+      <div className=" mx-auto grid grid-cols-2 md:grid-cols-5  gap-8 max-w-[1074px]">
+        {footerLinks.map((section) => (
+          <div key={section.title}>
+            <h3 className="text-sm font-semibold mb-3">{section.title}</h3>
+            <ul className="space-y-2  ml-auto text-sm text-[#a1a1a1]">
+              {/* Regular links */}
+              {section.links?.map((link) => (
+                <li key={typeof link === "string" ? link : link.label}>
+                  {typeof link === "string" ? (
+                    <span className="cursor-pointer hover:text-white">
+                      {link}
+                    </span>
+                  ) : (
+                    <Link href={link.href || "#"} className="hover:text-white">
                       {link.label}
                     </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2">
-            <div className="h-6 w-6 bg-black dark:bg-white rounded-full" />
-            <span className="text-lg font-semibold">Vercel</span>
+                  )}
+                </li>
+              ))}
+              {/* Social icons section */}
+              {section.icons?.map((social) => (
+                <li key={social.label}>
+                  <Link
+                    href={social.href}
+                    className="flex items-center  gap-2 hover:text-white"
+                  >
+                    {/* <social.icon className="w-4 h-4" /> */}
+                    {social.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Vercel, Inc. All rights reserved.
-          </p>
-          <div className="flex gap-4">
-            <Link
-              href="#"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Twitter
-            </Link>
-            <Link
-              href="#"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              GitHub
-            </Link>
-            <Link
-              href="#"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Discord
-            </Link>
-          </div>
+        ))}
+        <div className=" ml-auto">
+          <VercelFooterSvg />
         </div>
+      </div>
+
+      {/* Status bar */}
+      <div className="mt-8 text-sm max-w-[1074px] mx-auto">
+        <Link
+          href="#"
+          className="flex items-center gap-2 text-blue-500 hover:underline"
+        >
+          <span className="inline-block w-2 h-2 bg-blue-500 rounded-full"></span>
+          All systems normal
+        </Link>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

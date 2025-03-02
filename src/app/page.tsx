@@ -8,7 +8,7 @@ import { twJoin } from "tailwind-merge";
 import { FC } from "react";
 import ScaleContentSection from "@/components/sections/scale-content-section/scale-content-section";
 import ReadyDeploySection from "@/components/sections/ready-deploy-section/ready-deploy-section";
-import FrontendObservabilitySection from "@/components/sections/frontend-observability-section/frontend-observability-section";
+// import FrontendObservabilitySection from "@/components/sections/frontend-observability-section/frontend-observability-section";
 
 export default function Home() {
   return (
