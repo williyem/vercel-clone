@@ -1,6 +1,6 @@
 import VercelFooterSvg from "@/app/assets/icons/vercel-footer-svg";
 import Link from "next/link";
-import { ThemeToggle } from "./theme-toggle";
+// import { ThemeToggle } from "./theme-toggle";
 
 const footerLinks = [
   {
