@@ -1,5 +1,6 @@
 import VercelFooterSvg from "@/app/assets/icons/vercel-footer-svg";
 import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
 
 const footerLinks = [
   {
@@ -74,7 +75,7 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className="w-full  bg-black text-white px-6 py-10">
+    <footer className="w-full  bg-black text-white px-6 py-10 md:py-20">
       <div className=" mx-auto grid grid-cols-2 md:grid-cols-5  gap-8 max-w-[1074px]">
         {footerLinks.map((section) => (
           <div key={section.title}>
@@ -88,7 +89,7 @@ const Footer = () => {
                       {link}
                     </span>
                   ) : (
-                    <Link href={link.href || "#"} className="hover:text-white">
+                    <Link href={"#"} className="hover:text-white">
                       {link.label}
                     </Link>
                   )}
@@ -115,7 +116,7 @@ const Footer = () => {
       </div>
 
       {/* Status bar */}
-      <div className="mt-8 text-sm max-w-[1074px] mx-auto">
+      <div className="mt-8 text-sm max-w-[1074px] flex items-center justify-between mx-auto">
         <Link
           href="#"
           className="flex items-center gap-2 text-blue-500 hover:underline"
@@ -123,6 +124,7 @@ const Footer = () => {
           <span className="inline-block w-2 h-2 bg-blue-500 rounded-full"></span>
           All systems normal
         </Link>
+        {/* <ThemeToggle /> */}
       </div>
     </footer>
   );

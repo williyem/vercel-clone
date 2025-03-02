@@ -1,5 +1,3 @@
-import LockIconSvg from "@/app/assets/icons/lock-icon-svg";
-import { Lock, Terminal } from "lucide-react";
 import React from "react";
 import DeployLeft from "./components/deploy-left";
 import DeployRight from "./components/deploy-right";
