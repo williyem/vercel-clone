@@ -58,8 +58,8 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationMenuWithNub() {
   return (
-    <section className="max-w-[1448px] w-full flex items-center justify-between">
-      <NavigationMenu className="  gap-x-8">
+    <section className="lg:max-w-[1448px] max-w-[95%] mx-auto w-full flex items-center justify-between">
+      <NavigationMenu className="max-sm:py-2  gap-x-8">
         <Image
           alt="vercel-logotype Logo"
           loading="eager"
@@ -71,7 +71,7 @@ export function NavigationMenuWithNub() {
           // style="color:transparent"
           src={vercelLogo}
         ></Image>
-        <NavigationMenuList className="relative text-xs">
+        <NavigationMenuList className="max-lg:hidden relative text-xs">
           <NavigationMenuItem>
             <NavigationMenuTrigger className="text-sm text-white/50 font-light ">
               Products
@@ -198,7 +198,7 @@ export function NavigationMenuWithNub() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="flex gap-x-3 text-sm items-center">
+      <div className="hidden lg:flex gap-x-3 text-sm items-center">
         <Button variant={"outline"}>Log In</Button>
         <Button variant={"outline"}>Contact</Button>
         <Button>Sign Up</Button>

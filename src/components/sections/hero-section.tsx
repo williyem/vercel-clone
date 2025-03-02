@@ -8,7 +8,7 @@ import VercelCanvas from "../vercel-canvas";
 
 export default function HeroSection() {
   return (
-    <main className="relative min-h-[79vh] w-full overflow-x-hidden bg-[#000] pt-28 text-[rgb(237,237,237)]">
+    <main className="relative min-h-[70vh] w-full overflow-x-hidden bg-[#000] pt-28 text-[rgb(237,237,237)]">
       <header className="flex w-full items-center  justify-center px-4">
         <div className="relative grid  grid-cols-[repeat(8,var(--cellsize))] grid-rows-[1fr_repeat(4,var(--cellsize))] place-items-center border border-[var(--border)] md:grid-cols-[repeat(12,var(--cellsize))] md:grid-rows-[repeat(8,var(--cellsize))]">
           <FloatingCross />

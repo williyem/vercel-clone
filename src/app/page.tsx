@@ -13,16 +13,19 @@ import FrontendObservabilitySection from "@/components/sections/frontend-observa
 export default function Home() {
   return (
     <main
-      className=" mx-auto   "
+      className=" mx-auto   max-w-[100%] "
       style={{ width: "calc(var(--cellsize) * 13)" }}
     >
       <HeroSection />
       <div
-        className="text-white    relative   mx-auto text-lg "
-        style={{ width: "calc(var(--cellsize) * 12)" }}
+        className="text-white    relative max-w-[100%]   mx-auto text-lg "
+        style={{
+          width: "calc(var(--cellsize) * 12)",
+          // maxWidth: "calc(var(--cellsize) * 8)%",
+        }}
       >
         <BottomFloatingCross />
-        <div className=" border border-[var(--border)] border-t-0">
+        <div className=" border w-full border-[var(--border)] border-t-0">
           <div className="space-y-3">
             <DevelopSection />
             <DeploysPreproductionSection />

@@ -4,7 +4,7 @@ import ChatInterface from "./chat-interface";
 
 const DeployRight = () => {
   return (
-    <div className="space-y-2 basis-1/2 p-12">
+    <div className="space-y-2 basis-1/2 max-sm:mt-28 p-12">
       <div className="flex items-center gap-2 text-[#a1a1a1] text-base">
         <Terminal size={18} />
         <span>Collaborative pre-production</span>
