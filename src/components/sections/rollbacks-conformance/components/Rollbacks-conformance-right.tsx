@@ -1,12 +1,12 @@
-import { Terminal } from "lucide-react";
+import BookSvg from "@/app/assets/icons/book-svg";
 import React from "react";
 
 const RollBacksConformanceRight = () => {
   return (
     <div className="space-y-2 basis-1/2 p-12">
-      <div className="flex items-center gap-2 text-[#a1a1a1] text-base">
-        <Terminal size={18} />
-        <span>Move fast, don’t break things.</span>
+      <div className="flex items-center gap-2 dark:text-[#a1a1a1] text-base">
+        <BookSvg />
+        <span>Conformance</span>
       </div>
       <div
         className="text-[#ededed] text-2xl mb-8 flex flex-wrap"
